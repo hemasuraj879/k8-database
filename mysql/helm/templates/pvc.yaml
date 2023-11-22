@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: ebs-mysql-pvc
+  namespace: roboshop
 spec:
   storageClassName: "ebs-sc"
   accessModes:
