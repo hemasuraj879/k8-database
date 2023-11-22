@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongodb
+  namespace: roboshop
   labels:
     app: mongodb
     tier: db
@@ -23,7 +24,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: "joindevops/mongodb:{{ .Values.statefulset.imageVersion }} "
+        image: "joindevops/mongodb:{{ .Values.statefulset.imageVersion }}"
         volumeMounts:
         - name: mongodb
           mountPath: /data/db
